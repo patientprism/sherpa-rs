@@ -105,7 +105,7 @@ impl Diarize {
     }
 
     pub fn compute(
-        &mut self,
+        &self,
         mut samples: Vec<f32>,
         progress_callback: Option<ProgressCallback>,
     ) -> Result<ComputedDiarizationSegments> {
