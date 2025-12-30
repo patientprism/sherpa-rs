@@ -155,7 +155,7 @@ impl Diarize {
                             let mut speaker_embeddings = std::ptr::null_mut();
                             let mut speaker_embeddings_len: i32 = 0;
 
-                            sherpa_rs_sys::SherpaOnnxOfflineSpeakerDiarizationResultGetSpeakerEmbeddings(
+                            sherpa_rs_sys::SherpaOnnxOfflineSpeakerDiarizationResultGetSpeakerEmbedding(
                                 result,
                                 segment.speaker,
                                 &mut speaker_embeddings,
@@ -171,7 +171,7 @@ impl Diarize {
                                     .to_vec(),
                                 );
 
-                                sherpa_rs_sys::SherpaOnnxOfflineSpeakerDiarizationResultFreeSpeakerEmbeddings(
+                                sherpa_rs_sys::SherpaOnnxOfflineSpeakerDiarizationResultFreeSpeakerEmbedding(
                                     speaker_embeddings,
                                 );
                             } else {
