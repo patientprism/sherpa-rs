@@ -54,7 +54,7 @@ impl EmbeddingExtractor {
     }
 
     pub fn compute_speaker_embedding(
-        &self,
+        &mut self,
         samples: Vec<f32>,
         sample_rate: u32,
     ) -> Result<Vec<f32>> {
@@ -95,7 +95,7 @@ impl EmbeddingExtractor {
 
     #[allow(clippy::missing_safety_doc)]
     pub unsafe fn is_ready(
-        &self,
+        &mut self,
         stream: *const sherpa_rs_sys::SherpaOnnxOnlineStream,
     ) -> bool {
         unsafe {
